@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 01:35 AM
+-- Generation Time: Dec 04, 2023 at 02:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guru`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `guru` (
+CREATE TABLE `admin` (
   `Username` varchar(200) NOT NULL,
   `Password` varchar(200) NOT NULL,
   `id_user` int(100) NOT NULL,
@@ -39,9 +39,9 @@ CREATE TABLE `guru` (
 --
 
 --
--- Indexes for table `guru`
+-- Indexes for table `admin`
 --
-ALTER TABLE `guru`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_user`);
 COMMIT;
 
