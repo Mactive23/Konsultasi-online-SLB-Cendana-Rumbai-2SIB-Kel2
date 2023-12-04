@@ -9,7 +9,7 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        $dataSiswa = DB::select(DB::raw('select * from siswa'));
+        $dataSiswa = DB::select(DB::raw('select * from data_siswa'));
         return view('siswa.index', compact('dataSiswa'));
     }
 
@@ -28,7 +28,7 @@ class SiswaController extends Controller
             'data_identitas_siswa' => 'required'
         ]);
 
-        DB::insert("INSERT INTO siswa (id_siswa, informasi_kesehatan, data_pendidikan, data_kontak, data_konseling, data_identitas_siswa) 
+        DB::insert("INSERT INTO data_siswa (id_siswa, informasi_kesehatan, data_pendidikan, data_kontak, data_konseling, data_identitas_siswa) 
         VALUES (uuid(), ?, ?, ?, ?, ?)", [
             $request->informasi_kesehatan,
             $request->data_pendidikan,
@@ -41,7 +41,7 @@ class SiswaController extends Controller
 
     public function edit($id)
     {
-        $siswa = DB::table('siswa')->where('id_siswa', $id)->first();
+        $siswa = DB::table('data_siswa')->where('id_siswa', $id)->first();
         return view('siswa.edit', compact('siswa'));
     }
 
@@ -68,7 +68,7 @@ class SiswaController extends Controller
 
     public function destroy($id)
     {
-        DB::table('siswa')->where('id_siswa', $id)->delete();
+        DB::table('data_siswa')->where('id_siswa', $id)->delete();
         return redirect()->route('siswa.index')->with(['success' => 'Data Siswa Berhasil Dihapus!']);
     }
 }

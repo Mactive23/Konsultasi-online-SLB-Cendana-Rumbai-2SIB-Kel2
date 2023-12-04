@@ -17,49 +17,79 @@
                             @csrf
                             <div class="form-group">
                                 <label class="font-weight-bold">ID Siswa</label>
-                                <input type="varchar" class="form-control @error('id_siswa') is-invalid @enderror" name="id_siswa" value="{{ old('id_siswa') }}">
+                                <input type="text" class="form-control @error('id_siswa') is-invalid @enderror" name="id_siswa" placeholder="id_siswa">
+
+                                <!-- error message untuk id siswa -->
                                 @error('id_siswa')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">informasi kesehatan</label>
-                                <input type="varchar" class="form-control @error('informasi_kesehatan') is-invalid @enderror" name="informasi_kesehatan" value="{{ old('informasi_kesehatan') }}">
-                                @error('informasi_kesehatan')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <input type="text" class="form-control @error('informasi_kesehatan') is-invalid @enderror" name="informasi kesehatan" placeholder="informasi kesehatan">
+
+                                <!-- error message untuk informasi kesehatan -->
+                                @error('informasi kesehatan')
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">data pendidikan</label>
-                                <input type="varchar" class="form-control @error('data_pendidikan') is-invalid @enderror" name="data_pendidikan" value="{{ old('data_pendidikan') }}">
+                                <input type="text" class="form-control @error('data_pendidikan') is-invalid @enderror" name="data pendidikan" placeholder="data_pendidikan">
+
+                                <!-- error message untuk data pendidikan -->
                                 @error('data_pendidikan')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">data kontak</label>
-                                <input type="varchar" class="form-control @error('data_kontak') is-invalid @enderror" name="data_kontak" value="{{ old('data_kontak') }}">
+                                <input type="text" class="form-control @error('data_kontak') is-invalid @enderror" name="data kontak" placeholder="data_kontak">
+
+                                <!-- error message untuk data kontak -->
                                 @error('data_kontak')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">data konseling</label>
-                                <input type="varchar" class="form-control @error('data_konseling') is-invalid @enderror" name="id_siswa" value="{{ old('data_konseling') }}">
+                                <input type="text" class="form-control @error('data_konseling') is-invalid @enderror" name="data konseling" placeholder="data_konseling">
+
+                                <!-- error message untuk data konseling -->
                                 @error('data_konseling')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label class="font-weight-bold">data identitas siswa</label>
-                                <input type="varchar" class="form-control @error('data_identitas_siswa') is-invalid @enderror" name="data_identitas_siswa" value="{{ old('data_identitas_siswa') }}">
+                                <input type="text" class="form-control @error('data_identitas_siswa') is-invalid @enderror" name="data identitas siswa" placeholder="data_identitas_siswa">
+
+                                <!-- error message untuk data identitas siswa -->
                                 @error('data_identitas_siswa')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
