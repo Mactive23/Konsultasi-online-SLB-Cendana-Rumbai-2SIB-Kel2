@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/Orangtua', \App\Http\Controllers\OrangtuaController::class);
-
+Route::get('/Orangtua', [OrangtuaController::class, 'index'])->name('Orangtua.index');
+Route::get('/Orangtua/{id}', [OrangtuaController::class, 'show'])->name('Orangtua.show');

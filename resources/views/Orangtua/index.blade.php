@@ -29,13 +29,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($data as $key => $absensi)
+                                @forelse ($data as $key => $Orangtua)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $absensi->ID }}</td>
-                                    <td>{{ $absensi->USERNAME }}</td>
-                                    <td>{{ $absensi->PASSWORD }}</td>
-                                    <td>{{ $absensi->LEVEL }}</td>
+                                    <td>{{ $Orangtua->ID }}</td>
+                                    <td>{{ $Orangtua->USERNAME }}</td>
+                                    <td>{{ $Orangtua->PASSWORD }}</td>
+                                    <td>{{ $Orangtua->LEVEL }}</td>
                                 </tr>
                                 @empty
                                 <div class="alert alert-danger">

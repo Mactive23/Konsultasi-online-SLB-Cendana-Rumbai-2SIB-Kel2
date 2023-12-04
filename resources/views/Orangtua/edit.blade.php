@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Data Formulir - Penerimaan Mahasiswa Baru</title>
+    <title>Edit Data Orantua</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -15,12 +15,12 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('Absensi.update', $data->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('Orangtua.update', $data->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label class="font-weight-bold">NAMA</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Nama Absensi" value="{{ $data->nama }}">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Nama Orangtua" value="{{ $data->nama }}">
                                 @error('nama')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">KETERANGAN</label>
-                                <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan Absensi" value="{{ $data->keterangan }}">
+                                <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan Orangtua" value="{{ $data->keterangan }}">
                                 @error('keterangan')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}

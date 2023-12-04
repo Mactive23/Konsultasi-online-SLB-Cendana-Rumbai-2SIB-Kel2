@@ -37,19 +37,21 @@ class OrangtuaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_user' => 'required',
+           
             'username' => 'required',
             'password' => 'required',
+            'id_user' => 'required',
             'level' => 'required',
 
 
         ]);
 
         // Insert data into the database
-        DB::insert("INSERT INTO Orangtua (id_user, username, password, level) VALUES (uuid(), ?, ?)", [
-            $request->id_user,
+        DB::insert("INSERT INTO Orangtua ( username, password,id_user, level) VALUES (?, ?, uuid(),?)", [
+            
             $request->username,
             $request->password,
+            $request->id_user,
             $request->level,
 
 
@@ -77,7 +79,7 @@ class OrangtuaController extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('Orangtua')->where('id', $id)->first();
+        $data = DB::table('Orangtua')->where('id_user', $id)->first();
         return view('Orangtua.edit', compact('data'));
     }
 
@@ -119,7 +121,7 @@ class OrangtuaController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('Orangtua')->where('id', $id)->delete();
+        DB::table('Orangtua')->where('id_user', $id)->delete();
 
         return redirect()->route('Orangtua.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }

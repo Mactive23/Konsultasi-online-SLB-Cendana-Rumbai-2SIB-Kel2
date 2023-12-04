@@ -20,10 +20,6 @@
                         <form action="{{ route('Orangtua.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="nama">ID:</label>
-                                <input type="text" class="form-control" id="nama" name="nama" required>
-                            </div>
-                            <div class="form-group">
                                 <label for="nama">Username:</label>
                                 <input type="text" class="form-control" id="nama" name="nama" required>
                             </div>
