@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class KonsultasiController extends Controller
+class GuruController extends Controller
 {
     /**
-     * Display a listing of the resource. 
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = DB::select(DB::raw("select * from konsultasi"));
-        return view('konsultasi.index', compact('data'));
+        $data = DB::select(DB::raw("select * from guru"));
+        return view('guru.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class KonsultasiController extends Controller
      */
     public function create()
     {
-        return view('konsultasi.create');
+        return view('guru.create');
     }
 
     /**
@@ -37,13 +37,12 @@ class KonsultasiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul'  =>'required',
-            'opsi'  =>'required',
-            'deskripsi' =>'required'
+            'Username'  =>'required',
+            'Password'  =>'required'
         ]);
-            DB::insert("INSERT INTO `konsultasi` (`id_konsultasi`, `judul`, `opsi`, `deskripsi`) VALUES (uuid(), ?, ?, ?)",
-            [$request->judul,$request->opsi,$request->deskripsi]);
-            return redirect()->route('konsultasi.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            DB::insert("INSERT INTO `guru` (`id_guru`, `Username`, 'Password') VALUES (uuid(), ?, ?)",
+            [$request->Username,$request->Password]);
+            return redirect()->route('guru.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -65,8 +64,8 @@ class KonsultasiController extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('konsultasi')->where('id_konsultasi', $id)->first();
-        return view('konsultasi.edit', compact('data'));
+        $data = DB::table('guru')->where('id_guru', $id)->first();
+        return view('guru.edit', compact('data'));
     }
 
     /**
@@ -79,15 +78,14 @@ class KonsultasiController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'judul'  =>'required',
-            'opsi'  =>'required',
-            'deskripsi' =>'required'
+            'username'  =>'required',
+            'password'  =>'required'
         ]);
             DB::update(
-                "UPDATE `konsultasi` SET `judul`=?,`opsi`=?,`deskripsi`=? WHERE id_konsultasi=?",
-                [$request->judul, $request->opsi, $request->deskripsi, $id]
+                "UPDATE `guru` SET `username`=?,`password`=? WHERE id_guru=?",
+                [$request->username,$request->password]
             );
-        return redirect()->route('konsultasi.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        return redirect()->route('guru.index')->with(['success' => 'Data Berhasil Diupdate!']);
     }
 
     /**
@@ -98,8 +96,8 @@ class KonsultasiController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('konsultasi')->where('id_konsultasi', $id)->delete();
+        DB::table('guru')->where('id_guru', $id)->delete();
         //redirect to index
-        return redirect()->route('konsultasi.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('guru.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
