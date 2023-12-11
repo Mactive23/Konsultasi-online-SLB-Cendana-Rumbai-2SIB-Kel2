@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 01:34 AM
+-- Generation Time: Dec 11, 2023 at 02:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,13 +24,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orang_tua`
+-- Table structure for table `orangtua`
 --
 
-CREATE TABLE `orang_tua` (
+CREATE TABLE `orangtua` (
+  `id_user` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `id_user` varchar(255) NOT NULL,
   `level` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,9 +39,9 @@ CREATE TABLE `orang_tua` (
 --
 
 --
--- Indexes for table `orang_tua`
+-- Indexes for table `orangtua`
 --
-ALTER TABLE `orang_tua`
+ALTER TABLE `orangtua`
   ADD PRIMARY KEY (`id_user`);
 COMMIT;
 

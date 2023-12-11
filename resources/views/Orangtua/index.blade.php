@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Orangtua</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,30 +16,42 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('Orangtua.create') }}" class="btn btn-md btn-success mb-3">TAMBAH DATA ORANGTUA</a>
+                        <a href="{{ route('Orangtua.create') }}" class="btn btn-md btn-success mb-3">TAMBAH Data Orangtua</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">NO</th>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">USERNAME</th>
-                                    <th scope="col">PASSWORD</th>
-                                    <th scope="col">LEVEL</th>
-
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($data as $key => $Orangtua)
+                                @forelse ($data as $Orangtua)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $Orangtua->ID }}</td>
-                                    <td>{{ $Orangtua->USERNAME }}</td>
-                                    <td>{{ $Orangtua->PASSWORD }}</td>
-                                    <td>{{ $Orangtua->LEVEL }}</td>
+                                    
+                                    <td>{{ $Orangtua->username}}</td>
+
+                                    <td>{{ $Orangtua->password}}</td>
+
+                                    <td>{{ $Orangtua->level}}</td>
+
+                                    <td class="text-center">
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('Orangtua.destroy', $Orangtua->id_Orangtua) }}" method="post">
+                                            <a href="{{route('Orangtua.edit', $Orangtua->id_Orangtua) }}" class="btn btn-sm btn-primary">EDIT</a>
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @empty
                                 <div class="alert alert-danger">
-                                    Data Orangtua belum Tersedia.
+                                    Data informasi belum
+                                    Tersedia.
+
                                 </div>
                                 @endforelse
                             </tbody>
@@ -53,10 +65,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
-        // message with toastr
-        @if(session()->has('success'))
+        //message with toastr
+        @if (session()-> has('success'))
             toastr.success('{{ session('success') }}', 'BERHASIL!');
-        @elseif(session()->has('error'))
+        @elseif (session()-> has('error'))
             toastr.error('{{ session('error') }}', 'GAGAL!');
         @endif
     </script>
