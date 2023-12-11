@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('konsultasi.update', $data->id_konsultasi) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('Orangtua.update', $data->id_user) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group">

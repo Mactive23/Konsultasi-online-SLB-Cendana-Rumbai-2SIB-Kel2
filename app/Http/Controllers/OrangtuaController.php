@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class OrangtuaController extends Controller
 {
@@ -40,7 +41,7 @@ class OrangtuaController extends Controller
             'password'  =>'required',
             'level' =>'required'
         ]);
-            DB::insert("INSERT INTO `Orangtua` (`id_Orangtua`, `username`, `password`, `level`) VALUES (uuid(), ?, ?, ?)",
+            DB::insert("INSERT INTO `Orangtua` (`id_user`, `username`, `password`, `level`) VALUES (uuid(), ?, ?, ?)",
             [$request->username,$request->password,$request->level]);
             return redirect()->route('Orangtua.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
@@ -64,7 +65,7 @@ class OrangtuaController extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('Orangtua')->where('id_Orangtua', $id)->first();
+        $data = DB::table('Orangtua')->where('id_user', $id)->first();
         return view('Orangtua.edit', compact('data'));
     }
 
@@ -83,7 +84,7 @@ class OrangtuaController extends Controller
             'level' =>'required'
         ]);
             DB::update(
-                "UPDATE `Orangtua` SET `username`=?,`password`=?,`level`=? WHERE id_Orangtua=?",
+                "UPDATE `Orangtua` SET `username`=?,`password`=?,`level`=? WHERE id_user=?",
                 [$request->username, $request->password, $request->level, $id]
             );
         return redirect()->route('Orangtua.index')->with(['success' => 'Data Berhasil Diupdate!']);
@@ -97,7 +98,7 @@ class OrangtuaController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('Orangtua')->where('id_Orangtua', $id)->delete();
+        DB::table('Orangtua')->where('id_user', $id)->delete();
         //redirect to index
         return redirect()->route('Orangtua.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }

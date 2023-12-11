@@ -37,8 +37,8 @@
                                     <td>{{ $Orangtua->level}}</td>
 
                                     <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('Orangtua.destroy', $Orangtua->id_Orangtua) }}" method="post">
-                                            <a href="{{route('Orangtua.edit', $Orangtua->id_Orangtua) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('Orangtua.destroy', $Orangtua->id_user) }}" method="post">
+                                            <a href="{{route('Orangtua.edit', $Orangtua->id_user) }}" class="btn btn-sm btn-primary">EDIT</a>
 
                                             @csrf
                                             @method('DELETE')
