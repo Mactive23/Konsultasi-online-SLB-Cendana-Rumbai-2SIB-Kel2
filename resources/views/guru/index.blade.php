@@ -16,21 +16,25 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('guru.create') }}" class="btn btn-md btn-success mb-3">TAMBAH GURU</a>
+                        <a href="{{ route('guru.create') }}" class="btn btn-md btn-success mb-3">TAMBAH DATA GURU</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">username</th>
-                                    <th scope="col">password</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Level</th>
                                     <th scope="col">AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($data as $guru)
                                 <tr>
-                                    <td>{{ $guru->username}}</td>
+                                    
+                                    <td>{{ $guru->Username}}</td>
 
-                                    <td>{{ $guru->password}}</td>
+                                    <td>{{ $guru->Password}}</td>
+
+                                    <td>{{ $guru->level}}</td>
 
                                     <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('guru.destroy', $guru->id_guru) }}" method="post">

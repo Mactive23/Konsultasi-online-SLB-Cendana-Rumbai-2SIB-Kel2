@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah IGuru</title>
+    <title>Tambah Data Guru</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -18,12 +18,12 @@
                         <form action="{{ route('guru.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label class="font-weight-bold">Username</label>
+                                <label class="font-weight-bold">USERNAME</label>
 
-                                <input type="text" class="form-control @error('Username') is-invalid @enderror" name="Username" placeholder="Username">
+                                <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="username">
 
-                                <!-- error message untuk Username -->
-                                @error('Username')
+                                <!-- error message untuk username -->
+                                @error('username')
                                 <div class="alert alert-danger mt-2">
 
                                     {{ $message }}
@@ -31,12 +31,25 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold">Username</label>
+                                <label class="font-weight-bold">PASSWORD</label>
 
-                                <input type="text" class="form-control @error('Username') is-invalid @enderror" name="Username" placeholder="Username">
+                                <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="password">
 
-                                <!-- error message untuk Username -->
-                                @error('Username')
+                                <!-- error message untuk password -->
+                                @error('password')
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">LEVEL</label>
+
+                                <input type="text" class="form-control @error('level') is-invalid @enderror" name="level" placeholder="level">
+
+                                <!-- error message untuk level -->
+                                @error('level')
                                 <div class="alert alert-danger mt-2">
 
                                     {{ $message }}

@@ -7,14 +7,14 @@ use DB;
 
 class GuruController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = DB::select(DB::raw("select * from guru"));
+        $data = DB::select(DB::raw("select * from Guru"));
         return view('guru.index', compact('data'));
     }
 
@@ -37,11 +37,12 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'Username'  =>'required',
-            'Password'  =>'required'
+            'username'  =>'required',
+            'password'  =>'required',
+            'level' =>'required'
         ]);
-            DB::insert("INSERT INTO `guru` (`id_guru`, `Username`, 'Password') VALUES (uuid(), ?, ?)",
-            [$request->Username,$request->Password]);
+            DB::insert("INSERT INTO `guru` (`id_guru`, `username`, `password`, `level`) VALUES (uuid(), ?, ?, ?)",
+            [$request->username,$request->password,$request->level]);
             return redirect()->route('guru.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
@@ -79,11 +80,12 @@ class GuruController extends Controller
     {
         $this->validate($request, [
             'username'  =>'required',
-            'password'  =>'required'
+            'password'  =>'required',
+            'level' =>'required'
         ]);
             DB::update(
-                "UPDATE `guru` SET `username`=?,`password`=? WHERE id_guru=?",
-                [$request->username,$request->password]
+                "UPDATE `guru` SET `username`=?,`password`=?,`level`=? WHERE id_guru=?",
+                [$request->username, $request->password, $request->level, $id]
             );
         return redirect()->route('guru.index')->with(['success' => 'Data Berhasil Diupdate!']);
     }
