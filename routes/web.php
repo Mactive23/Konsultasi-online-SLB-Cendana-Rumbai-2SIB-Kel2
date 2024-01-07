@@ -25,8 +25,6 @@ Route::get('/siswa/{id}', [SiswaController::class, 'show'])->name('siswa.show');
 
 // routes/web.php
 
-use App\Http\Controllers\JadwalKonsultasiController;
-
 Route::get('/jadwal_konsultasi', [JadwalKonsultasiController::class, 'index'])->name('jadwal_konsultasi.index');
 Route::get('/jadwal_konsultasi/create', [JadwalKonsultasiController::class, 'create'])->name('jadwal_konsultasi.create');
 Route::post('/jadwal_konsultasi', [JadwalKonsultasiController::class, 'store'])->name('jadwal_konsultasi.store'); // Perhatikan perubahan pada rute ini
