@@ -9,9 +9,9 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">judul</th>
-                                <th scope="col">deskripsi</th>
-                                <th scope="col">AKSI</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

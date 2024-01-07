@@ -50,7 +50,7 @@
                                             <a href="#" class="list-group-item list-group-item-action active">
                                                 <div class="notification-info">
                                                     <div class="notification-list-user-img"><img src="assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>Jadwal Konsultasi
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
                                                 </div>
@@ -58,7 +58,7 @@
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
                                                     <div class="notification-list-user-img"><img src="assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>Jadwal Konsultasi
                                                         <div class="notification-date">2 days ago</div>
                                                     </div>
                                                 </div>
@@ -66,7 +66,7 @@
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
                                                     <div class="notification-list-user-img"><img src="assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> Jadwal Konsultasi
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
                                                 </div>
@@ -74,7 +74,7 @@
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
                                                     <div class="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>Jadwal Konsultasi
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
                                                 </div>
@@ -87,7 +87,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown connection">
+                        <!-- <li class="nav-item dropdown connection">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
                                 <li class="connection-list">
@@ -118,7 +118,7 @@
                                     <div class="conntection-footer"><a href="#">More</a></div>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
@@ -154,7 +154,6 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                
                                 <div id="submenu-1" class="submenu collapse show" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -164,6 +163,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboard-finance.html">Dashboard</a>
                                         </li>
+                        
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboard-sales.html">Data Siswa</a>
                                         </li>
