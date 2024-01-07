@@ -22,9 +22,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">DESKRIPSI</label>
-
-                                <input type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" placeholder="deskripsi">
-
+                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" rows="5"
+                                placeholder="Deskripsi">{{ old('deskripsi') }}</textarea>
                                 <!-- error message untuk deskripsi -->
                                 @error('deskripsi')
                                 <div class="alert alert-danger mt-2">

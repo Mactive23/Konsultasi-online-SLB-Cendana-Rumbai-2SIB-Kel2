@@ -200,13 +200,13 @@
                                             <a class="nav-link" href="pages/inbox.html">Jadwal Konsultasi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/email-details.html">Informasi</a>
+                                            <a class="nav-link" href="informasi">Informasi</a>
                                         </li>
                                         <li class="nav-item">
                                             
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/message-chat.html">Laporan</a>
+                                            <a class="nav-link" href="laporan">Laporan</a>
                                         </li>
                                     </ul>
                                 </div>
