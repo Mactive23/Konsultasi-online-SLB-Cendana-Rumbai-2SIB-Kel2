@@ -22,7 +22,25 @@ Route::get('/', function () {
 Route::resource('/Orangtua', \App\Http\Controllers\OrangtuaController::class);
 
 
-Route::get('/',[SesiController::class,'index']);
+Route::middleware(['guest'])->group(function(){
+
+Route::get('/',[SesiController::class,'index'])->name('login');
 Route::post('/',[SesiController::class,'login']);
 
+});
+
+Route::get('/home',function(){
+    return redirect('/admin');
+});
+
+
+Route::middleware(['auth'])->group(function(){
+
 Route::get('/admin',[AdminController::class,'index']);
+Route::get('/admin/admin',[AdminController::class,'admin'])->middleware('userAkses:admin');
+Route::get('/admin/guru',[AdminController::class,'guru'])->middleware('userAkses:guru');
+Route::get('/admin/orangtua',[AdminController::class,'orangtua'])->middleware('userAkses:orangtua');
+
+Route::get('/logout',[SesiController::class, 'logout']);
+});
+
