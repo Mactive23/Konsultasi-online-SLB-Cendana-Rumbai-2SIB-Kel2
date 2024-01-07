@@ -39,7 +39,6 @@ class DummyUsersSeeder extends Seeder
 
         foreach($userData as $key => $val ){
             User::create($val);
-
         }
     }
 }

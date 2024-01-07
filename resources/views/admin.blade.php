@@ -24,7 +24,6 @@
         <li class="list-group-item">Menu Guru</li>
         @endif
 
-        
         @if(Auth::user()->role == 'orangtua')
         <li class="list-group-item">Menu Orangtua</li>
         @endif
