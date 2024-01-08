@@ -21,7 +21,7 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">ID Jadwal</label>
-                                <input type="text" class="form-control @error('id_jadwal') is-invalid @enderror" name="id_siswa" value="{{ $siswa->id_jadwal }}">
+                                <input type="text" class="form-control @error('id_jadwal') is-invalid @enderror" name="id_jadwal" value="{{ $jadwalKonsultasi->id_jadwal }}">
                                 @error('id_jadwal')
                                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                                 @enderror
@@ -29,8 +29,8 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">Nama Murid</label>
-                                <input type="text" class="form-control @error('nama_murid') is-invalid @enderror" name="nama_pasien" value="{{ $jadwalKonsultasi->nama_murid }}">
-                                @error('nama_pasien')
+                                <input type="text" class="form-control @error('nama_murid') is-invalid @enderror" name="nama_murid" value="{{ $jadwalKonsultasi->nama_murid }}">
+                                @error('nama_murid')
                                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                                 @enderror
                             </div>

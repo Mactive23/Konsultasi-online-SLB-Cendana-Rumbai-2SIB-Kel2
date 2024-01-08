@@ -44,7 +44,7 @@ class JadwalKonsultasiController extends Controller
     {
         $this->validateData($request);
 
-        JadwalKonsultasi::where('id', $id)->update([
+        JadwalKonsultasi::where('id_jadwal', $id)->update([
             'id_jadwal' => $request->input('id_jadwal'),
             'nama_murid' => $request->input('nama_murid'),
             'waktu_konsultasi' => $request->input('waktu_konsultasi'),
@@ -56,8 +56,8 @@ class JadwalKonsultasiController extends Controller
 
     public function destroy($id)
     {
-        $jadwalKonsultasi = JadwalKonsultasi::findOrFail($id);
-        $jadwalKonsultasi->delete();
+        $JadwalKonsultasi = JadwalKonsultasi::findOrFail($id);
+        $JadwalKonsultasi->delete();
 
         return redirect()->route('jadwal_konsultasi.index')->with('success', 'Jadwal konsultasi berhasil dihapus');
     }
