@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\SiswaController;
+
+use App\Http\Controllers\JadwalKonsultasiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +29,23 @@ Route::resource('/laporan', \App\Http\Controllers\LaporanController::class);
 Route::resource('/siswa', \App\Http\Controllers\SiswaController::class);
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
 Route::get('/siswa/{id}', [SiswaController::class, 'show'])->name('siswa.show');
-Route::get('/guru/{id}', [SiswaController::class, 'show'])->name('siswa.show');
+
+// routes/web.php
+
+Route::get('/jadwal_konsultasi', [JadwalKonsultasiController::class, 'index'])->name('jadwal_konsultasi.index');
+Route::get('/jadwal_konsultasi/create', [JadwalKonsultasiController::class, 'create'])->name('jadwal_konsultasi.create');
+Route::post('/jadwal_konsultasi', [JadwalKonsultasiController::class, 'store'])->name('jadwal_konsultasi.store'); // Perhatikan perubahan pada rute ini
+Route::get('/jadwal_konsultasi/edit/{id}', [JadwalKonsultasiController::class, 'edit'])->name('jadwal_konsultasi.edit');
+Route::put('/jadwal_konsultasi/update/{id}', [JadwalKonsultasiController::class, 'update'])->name('jadwal_konsultasi.update');
+Route::delete('/jadwal_konsultasi/destroy/{id}', [JadwalKonsultasiController::class, 'destroy'])->name('jadwal_konsultasi.destroy');
+
+Route::get('/layout', function () {
+    return view('layout.main');
+});
+
+Route::get('/layout', function () {
+    return view('layout.main1');
+});
+
+
 

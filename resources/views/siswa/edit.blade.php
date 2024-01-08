@@ -19,54 +19,84 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">ID Siswa</label>
-                                <input type="text" class="form-control @error('id_siswa') is-invalid @enderror" name="id_siswa" value="{{ $siswa->id_siswa }}">
+                                <input type="text" class="form-control @error('id_siswa') is-invalid @enderror" name="id_siswa" placeholder="id_siswa">
+
+                                <!-- error message untuk id siswa -->
                                 @error('id_siswa')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Informasi Kesehatan</label>
-                                <textarea class="form-control @error('informasi_kesehatan') is-invalid @enderror" name="informasi_kesehatan" rows="5" placeholder="Masukkan informasi kesehatan">{{ $siswa->informasi_kesehatan }}</textarea>
-                                @error('informasi_kesehatan')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <label class="font-weight-bold">informasi kesehatan</label>
+                                <input type="text" class="form-control @error('informasi_kesehatan') is-invalid @enderror" name="informasi kesehatan" placeholder="informasi kesehatan">
+
+                                <!-- error message untuk informasi kesehatan -->
+                                @error('informasi kesehatan')
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Data Pendidikan</label>
-                                <textarea class="form-control @error('data_pendidikan') is-invalid @enderror" name="data_pendidikan" rows="5" placeholder="Masukkan data pendidikan">{{ $siswa->data_pendidikan }}</textarea>
+                                <label class="font-weight-bold">data pendidikan</label>
+                                <input type="text" class="form-control @error('data_pendidikan') is-invalid @enderror" name="data pendidikan" placeholder="data_pendidikan">
+
+                                <!-- error message untuk data pendidikan -->
                                 @error('data_pendidikan')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Data Kontak</label>
-                                <textarea class="form-control @error('data_kontak') is-invalid @enderror" name="data_kontak" rows="5" placeholder="Masukkan data kontak">{{ $siswa->data_kontak }}</textarea>
+                                <label class="font-weight-bold">data kontak</label>
+                                <input type="text" class="form-control @error('data_kontak') is-invalid @enderror" name="data kontak" placeholder="data_kontak">
+
+                                <!-- error message untuk data kontak -->
                                 @error('data_kontak')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Data Konseling</label>
-                                <textarea class="form-control @error('data_konseling') is-invalid @enderror" name="data_konseling" rows="5" placeholder="Masukkan data konseling">{{ $siswa->data_konseling }}</textarea>
+                                <label class="font-weight-bold">data konseling</label>
+                                <input type="text" class="form-control @error('data_konseling') is-invalid @enderror" name="data konseling" placeholder="data_konseling">
+
+                                <!-- error message untuk data konseling -->
                                 @error('data_konseling')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Data Identitas Siswa</label>
-                                <textarea class="form-control @error('data_identitas_siswa') is-invalid @enderror" name="data_identitas_siswa" rows="5" placeholder="Masukkan data identitas siswa">{{ $siswa->data_identitas_siswa }}</textarea>
+                                <label class="font-weight-bold">data identitas siswa</label>
+                                <input type="text" class="form-control @error('data_identitas_siswa') is-invalid @enderror" name="data identitas siswa" placeholder="data_identitas_siswa">
+
+                                <!-- error message untuk data identitas siswa -->
                                 @error('data_identitas_siswa')
-                                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">
+
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-md btn-primary">Simpan</button>
-                            <button type="reset" class="btn btn-md btn-warning">Reset</button>
+                            <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
                         </form>
                     </div>
                 </div>

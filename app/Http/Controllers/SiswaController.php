@@ -41,7 +41,7 @@ class SiswaController extends Controller
 
     public function edit($id)
     {
-        $siswa = DB::table('siswa')->where('id_siswa', $id)->first();
+        $siswa = DB::table('data_siswa')->where('id_siswa', $id)->first();
         return view('siswa.edit', compact('siswa'));
     }
 
@@ -55,7 +55,7 @@ class SiswaController extends Controller
             'data_identitas_siswa' => 'required',
         ]);
 
-        DB::table('siswa')->where('id_siswa', $id)->update([
+        DB::table('data_siswa')->where('id_siswa', $id)->update([
             'informasi_kesehatan'  => $request->informasi_kesehatan,
             'data_pendidikan'      => $request->data_pendidikan,
             'data_kontak'          => $request->data_kontak,
@@ -68,7 +68,7 @@ class SiswaController extends Controller
 
     public function destroy($id)
     {
-        DB::table('siswa')->where('id_siswa', $id)->delete();
+        DB::table('data_siswa')->where('id_siswa', $id)->delete();
         return redirect()->route('siswa.index')->with(['success' => 'Data Siswa Berhasil Dihapus!']);
     }
 }
