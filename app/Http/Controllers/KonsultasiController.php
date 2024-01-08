@@ -37,12 +37,11 @@ class KonsultasiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul'  =>'required',
             'opsi'  =>'required',
             'deskripsi' =>'required'
         ]);
-            DB::insert("INSERT INTO `konsultasi` (`id_konsultasi`, `judul`, `opsi`, `deskripsi`) VALUES (uuid(), ?, ?, ?)",
-            [$request->judul,$request->opsi,$request->deskripsi]);
+            DB::insert("INSERT INTO `konsultasi` (`id_konsultasi`,`opsi`, `deskripsi`) VALUES (uuid(), ?, ?)",
+            [$request->opsi,$request->deskripsi]);
             return redirect()->route('konsultasi.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
@@ -79,13 +78,12 @@ class KonsultasiController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'judul'  =>'required',
             'opsi'  =>'required',
             'deskripsi' =>'required'
         ]);
             DB::update(
-                "UPDATE `konsultasi` SET `judul`=?,`opsi`=?,`deskripsi`=? WHERE id_konsultasi=?",
-                [$request->judul, $request->opsi, $request->deskripsi, $id]
+                "UPDATE `konsultasi` SET `opsi`=?,`deskripsi`=? WHERE id_konsultasi=?",
+                [$request->opsi, $request->deskripsi, $id]
             );
         return redirect()->route('konsultasi.index')->with(['success' => 'Data Berhasil Diupdate!']);
     }

@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/layout', function () {
+    return view('layouts.main');
+});
 Route::resource('/konsultasi', \App\Http\Controllers\KonsultasiController::class);
-Route::resource('/guru', \App\Http\Controllers\GuruController::class);
